@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="ResponsiveWebClient">
+        <div class="openerp openerp_webclient_container bootstrap_scope">
+            <div class="oe_menu_placeholder"/>
+            <div class="oe_application" />
+        </div>
+    </t>
+
+
+</templates>

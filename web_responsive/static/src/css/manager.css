@@ -1,0 +1,52 @@
+html.mobile .oe_application,
+html.mobile .oe_application > div,
+html.mobile .oe_application .view_manager {
+    width: auto;
+    height: auto;
+}
+
+html.mobile body {
+    overflow: auto;
+}
+
+html.mobile .view_manager_head {
+    overflow: visible;
+    border-bottom: 1px solid #cacaca;
+    background-color: #ededed;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#dedede));
+    background-image: -webkit-linear-gradient(top, #fcfcfc, #dedede);
+    background-image: -moz-linear-gradient(top, #fcfcfc, #dedede);
+    background-image: -ms-linear-gradient(top, #fcfcfc, #dedede);
+    background-image: -o-linear-gradient(top, #fcfcfc, #dedede);
+    background-image: linear-gradient(to bottom, #fcfcfc, #dedede);
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 0 9px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 0 9px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 0 9px rgba(0, 0, 0, 0.1);
+}
+
+html.mobile .view_manager_head .head_item {
+    margin: 5px;
+}
+
+html.mobile .view_manager_head .oe_searchview {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    float: none;
+}
+
+html.mobile .view_manager_head .oe_pager_group,
+html.mobile .view_manager_head .oe_view_manager_pager {
+    height: 26px;
+}
+
+html.mobile .oe_view_manager_body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 5px;
+}
+
+
+html.mobile .view_manager_footer {
+    height: 40px;
+}

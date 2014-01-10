@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+<t t-name="Toto">
+    <div class="openerp openerp_webclient_container">
+        <table class="oe_webclient">
+            <tr>
+                <td class="oe_topbar">
+                    <div class="oe_menu_placeholder"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="oe_application">
+                </td>
+            </tr>
+        </table>
+    </div>
+</t>
+
+<t t-name="ResponsiveMenu">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#openerp-menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Metric</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="openerp-menu">
+            <ul class="nav navbar-nav" t-if="widget.data">
+                <li t-foreach="widget.data.data.children" t-as="menu">
+                    <t t-call="ResponsiveMenu.link"/>
+                </li>
+                <li>
+                    <a href="#" class="switch-mobile">
+                        <span>Desktop Version</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</t>
+
+<t t-name="ResponsiveMenu.link">
+    <a t-attf-href="#menu_id=#{menu.id}&amp;action=#{menu.action ? menu.action.split(',')[1] : ''}"
+        t-att-class="menu.children.length ? 'oe_menu_toggler' : 'oe_menu_leaf'"
+        t-att-data-menu="menu.id"
+        t-att-data-action-model="menu.action ? menu.action.split(',')[0] : ''"
+        t-att-data-action-id="menu.action ? menu.action.split(',')[1] : ''">
+        <span class="oe_menu_text">
+            <t t-esc="menu.name"/>
+        </span>
+    </a>
+</t>
+
+<t t-name="Menu.secondary">
+    <div t-foreach="widget.data.data.children" t-as="menu" style="display: none" class="oe_secondary_menu" t-att-data-menu-parent="menu.id">
+        <t t-foreach="menu.children" t-as="menu">
+            <div class="oe_secondary_menu_section">
+                <t t-esc="menu.name"/>
+                <!--
+                    Shall the section be still clickable ?
+                    <t t-call="Menu.link"/>
+                -->
+            </div>
+            <t t-call="Menu.secondary.submenu"/>
+        </t>
+    </div>
+</t>
+<t t-name="Menu.secondary.submenu">
+    <ul t-if="menu.children.length" class="oe_secondary_submenu">
+        <li t-foreach="menu.children" t-as="menu">
+            <t t-call="Menu.link"/>
+            <!--<span class="oe_menu_label">8</span>-->
+            <t t-call="Menu.secondary.submenu"/>
+        </li>
+    </ul>
+</t>
+<t t-name="Menu.needaction_counter">
+    <div class="oe_tag oe_tag_dark oe_menu_counter">
+        <t t-if="widget.needaction_counter &gt; 99"> 99+ </t>
+        <t t-if="widget.needaction_counter &lt;= 99"> <t t-esc="widget.needaction_counter"/> </t>
+    </div>
+</t>
+
+<t t-name="UserMenu">
+    <span class="oe_user_menu oe_topbar_item oe_dropdown_toggle oe_dropdown_arrow">
+        <img class="oe_topbar_avatar" t-att-data-default-src="_s + '/web/static/src/img/user_menu_avatar.png'"/>
+        <span class="oe_topbar_name"/>
+        <ul class="oe_dropdown_menu">
+            <li><a href="#" data-menu="settings">Preferences</a></li>
+            <li><a href="#" data-menu="about">About OpenERP</a></li>
+            <li><a href="#" data-menu="help">Help</a></li>
+            <li><a href="#" data-menu="logout">Log out</a></li>
+        </ul>
+    </span>
+</t>
+
+<t t-name="UserMenu.about">
+    <div class="oe_about">
+      <a class="oe_activate_debug_mode oe_right" href="?debug" style="background-color: white; padding:2px 6px; border-radius: 10px;">Activate the developer mode</a>
+      <img class="oe_logo" src="/web/static/src/img/logo2.png"/>
+      <h3>Version <t t-esc="version_info.server_version"/></h3>
+
+      <div class="oe_bottom">
+        <p>Copyright © 2004-TODAY OpenERP SA. All Rights Reserved.<br />
+            OpenERP is a trademark of the <a target="_blank" href="http://openerp.com/" style="text-decoration: underline;">OpenERP SA Company</a>.</p>
+        <p>Licenced under the terms of <a target="_blank" href="http://www.gnu.org/licenses/agpl.html" style="text-decoration: underline;">GNU Affero General Public License</a></p>
+        <p>For more information visit <a target="_blank" href="http://openerp.com/" style="text-decoration: underline;">OpenERP.com</a></p>
+      </div>
+    </div>
+</t>
+
+</templates>

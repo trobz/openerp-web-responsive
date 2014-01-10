@@ -1,0 +1,14 @@
+html.mobile .bootstrap_scope .navbar {
+    margin-bottom: 0px !important;
+}
+
+html.mobile .bootstrap_scope .navbar span {
+    font-size: 13px;
+    text-shadow: none !important;
+}
+
+html.mobile .bootstrap_scope .navbar-collapse {
+    position: absolute;
+    background-color: rgb(51, 51, 51);
+    width: 100%;
+}

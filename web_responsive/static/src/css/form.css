@@ -1,0 +1,31 @@
+html.mobile .responsive-form .form-group .value {
+    font-size: 14px;
+    display: block;
+
+}
+
+html.mobile .responsive-form .tooltip.left .tooltip-arrow { border-left-color: #ac2925; }
+html.mobile .responsive-form .tooltip.right .tooltip-arrow { border-right-color: #ac2925; }
+html.mobile .responsive-form .tooltip.top .tooltip-arrow { border-top-color: #ac2925; }
+html.mobile .responsive-form .tooltip.bottom .tooltip-arrow { border-bottom-color: #ac2925; }
+
+html.mobile .responsive-form .tooltip-inner {
+    color: #fff;
+    background-color: #d2322d;
+}
+
+html.mobile .form-group label {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+html.mobile .form-group {
+    border-bottom: 1px solid #efefef;
+    margin: 0px;
+    padding: 10px 20px;
+    position: relative;
+}
+
+html.mobile .form-group:last-child {
+    border: none;
+}

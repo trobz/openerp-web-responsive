@@ -1,0 +1,12 @@
+html.mobile .bootstrap_scope .list-group-item > .badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    float: none;
+    margin: 0;
+}
+
+html.mobile .bootstrap_scope .list-group-item h4 {
+    cursor: pointer;
+}
+
