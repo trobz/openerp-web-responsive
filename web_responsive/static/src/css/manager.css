@@ -1,12 +1,28 @@
+html.mobile .openerp.openerp_webclient_container {
+    height: initial;
+}
+
+html.mobile body {
+    height: initial;
+    overflow: auto;
+}
+
+html.mobile .view_manager_head {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 50px;
+}
+
+html.mobile .oe_view_manager_body {
+    padding: 5px;
+}
+
 html.mobile .oe_application,
 html.mobile .oe_application > div,
 html.mobile .oe_application .view_manager {
     width: auto;
     height: auto;
-}
-
-html.mobile body {
-    overflow: auto;
 }
 
 html.mobile .view_manager_head {
@@ -24,6 +40,16 @@ html.mobile .view_manager_head {
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 0 9px rgba(0, 0, 0, 0.1);
 }
 
+html.mobile .view_manager_head:after,
+html.mobile .view_manager_head:before {
+    display: table;
+    content: " ";
+}
+
+html.mobile .view_manager_head:after {
+    clear: both;
+}
+
 html.mobile .view_manager_head .head_item {
     margin: 5px;
 }
@@ -35,18 +61,48 @@ html.mobile .view_manager_head .oe_searchview {
     float: none;
 }
 
+html.mobile .view_manager_head .oe_view_manager_pager {
+    padding: 5px 0 0;
+    margin: 5px 10px 0 0;
+}
+
 html.mobile .view_manager_head .oe_pager_group,
 html.mobile .view_manager_head .oe_view_manager_pager {
     height: 26px;
 }
 
-html.mobile .oe_view_manager_body {
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 5px;
+
+html.mobile .view_manager_head .info-panel {
+    clear: both;
+    text-align: center;
+}
+
+html.mobile .view_manager_head .info-panel ul {
+    margin: 0;
+    padding: 2px 3px;
+    background: #f5f5f5;
+    border-top: 1px solid #ccc;
+    height: 41px;
+}
+
+html.mobile .view_manager_head .info-panel ul li {
+    list-style: none;
+    font-size: 16px;
+    text-shadow: none;
+    line-height: 36px;
+    display: inline;
+    padding: 0 3px;
+}
+
+html.mobile .view_manager_head .info-panel li .label {
+    color: #999;
+    padding: 0;
+}
+html.mobile .view_manager_head .info-panel li .value {
+    color: #333;
 }
 
 
-html.mobile .view_manager_footer {
-    height: 40px;
-}
+
+
+

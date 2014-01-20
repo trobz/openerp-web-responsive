@@ -7,10 +7,6 @@
 
 <t t-name="ResponsiveItem">
     <h4><t t-esc="name" /></h4>
-
-    <h4><t t-esc="iman_id" /></h4>
-    <p><t t-esc="date"/></p>
-    <span class="badge">OWE: <t t-esc="owe_char" /> - OMCE: <t t-esc="omce_char" /></span>
 </t>
 
 </templates>

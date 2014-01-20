@@ -6,8 +6,8 @@
 
         <div class="view_manager_head">
             <div class="head_item oe_view_manager_view_search" t-opentag="true"/>
+            <div class="head_item oe_view_manager_buttons" />
             <div class="head_item oe_view_manager_pager oe_right"/>
-            <div class="clear" />
         </div>
 
         <div class="oe_view_manager_body">
@@ -16,9 +16,6 @@
             </t>
         </div>
 
-        <div class="view_manager_footer navbar-inverse">
-              <div class="head_item oe_view_manager_buttons" />
-        </div>
     </div>
 </t>
 

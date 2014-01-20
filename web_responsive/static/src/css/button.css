@@ -1,3 +1,11 @@
+html.mobile .oe_view_manager_buttons {
+    float: left;
+}
+
 html.mobile .oe_view_manager_buttons .btn {
     margin: 5px;
+}
+
+html.mobile .oe_view_manager_buttons .btn.align-right {
+    float: right;
 }

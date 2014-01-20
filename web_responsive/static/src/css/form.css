@@ -1,7 +1,6 @@
 html.mobile .responsive-form .form-group .value {
     font-size: 14px;
     display: block;
-
 }
 
 html.mobile .responsive-form .tooltip.left .tooltip-arrow { border-left-color: #ac2925; }
@@ -14,9 +13,25 @@ html.mobile .responsive-form .tooltip-inner {
     background-color: #d2322d;
 }
 
+html.mobile .responsive-form fieldset {
+    position: relative;
+}
+
 html.mobile .form-group label {
     font-size: 14px;
     font-weight: normal;
+}
+
+html.mobile .form-group [readonly] {
+    background-color: #fff;
+}
+
+html.mobile .form-group textarea.form-control {
+    height: inherit;
+}
+
+html.mobile .form-group .wrapped {
+    white-space: pre-wrap;
 }
 
 html.mobile .form-group {
@@ -28,4 +43,20 @@ html.mobile .form-group {
 
 html.mobile .form-group:last-child {
     border: none;
+}
+
+html.mobile .form-group .value {
+    font-weight: bolder;
+}
+
+/* datetime picker */
+
+html.mobile .dwbg,
+html.mobile .dwwr {
+    background: #000;
+    color: #eee;
+}
+
+html.mobile .dwv {
+    display: none;
 }

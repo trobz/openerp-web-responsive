@@ -25,6 +25,15 @@ openerp.unleashed.module('web_responsive').ready(function(instance){
         remove_mobile_tag(this.fvg.arch.children);
         return fragment.apply(this, arguments);
     };
+
+    // add a button on user menu to force mobile version
+    instance.web.UserMenu =  instance.web.UserMenu.extend({
+        template: 'UserMenuWithMobile',
+        on_menu_mobile: function(){
+            openerp.unleashed.forceMobile(!openerp.unleashed.forceMobile());
+            window.location.reload();
+        }
+    });
 });
 
 
