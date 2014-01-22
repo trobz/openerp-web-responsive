@@ -1,13 +1,5 @@
 openerp.unleashed.module('web_responsive').ready(function(instance, responsive){
 
-    instance.web.WebClient = instance.web.WebClient.extend({
-        show_application: function(){
-            var ret = this._super.apply(this, arguments);
-            this.menu.on('user_logout', this, this.on_logout);
-            return ret;
-        }
-    });
-
     instance.web.ViewManagerAction = instance.web.ViewManagerAction.extend({
         template: 'ResponsiveViewManager',
 
