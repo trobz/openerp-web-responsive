@@ -119,9 +119,9 @@ openerp.unleashed.module('web_responsive', function(responsive, _, Backbone, bas
                                 rule.digits = true;
                                 rule.number = false;
                                 break;
-                            case 'datetime':
-                                rule.date = true;
-                                break;
+                            // case 'datetime':
+                                // rule.date = true;
+                                // break;
                         }
                     }
                 }
