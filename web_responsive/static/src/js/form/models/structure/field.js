@@ -90,15 +90,15 @@ openerp.unleashed.module('web_responsive', function(responsive, _, Backbone, bas
         inputType: function(){
             var type = 'text';
             switch (this.get('ttype')) {
-                case 'date':
-                    type = 'date';
-                    break;
-                case 'datetime':
-                    type = 'datetime';
-                    break;
-                case 'time':
-                    type = 'time';
-                    break;
+                // case 'date':
+                    // type = 'date';
+                    // break;
+                // case 'datetime':
+                    // type = 'datetime';
+                    // break;
+                // case 'time':
+                    // type = 'time';
+                    // break;
                 case 'float':
                 case 'integer':
                     type = 'number';
