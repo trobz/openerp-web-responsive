@@ -1,8 +1,12 @@
 openerp.unleashed.module('web_responsive').ready(function(instance, responsive, _, Backbone, base){
 
+	openerp.unleashed.set_session_cookie = function(name, value){
+		if (!instance.session.name || !name) return ;
+		document.cookie = instance.session.name + '|' + name + '=' + encodeURIComponent(JSON.stringify(value));
+	};
     openerp.unleashed.forceMobile = function(state){
         if(_.isBoolean(state)){
-            instance.session.set_cookie('force_mobile', state);
+            openerp.unleashed.set_session_cookie('force_mobile', state);
         }
         return instance.session.get_cookie('force_mobile');
     };
