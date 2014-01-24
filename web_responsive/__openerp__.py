@@ -4,7 +4,9 @@
     'version': '1',
     'category': 'Hidden',
     'description':  """
-Make native form, list views responsive, based on Twitter Bootstrap 3
+Make native form, list views responsive and mobile friendly.
+
+plugin based on Twitter Bootstrap 3
 """,
     'author': 'Trobz',
     'website': 'http://www.trobz.com',
