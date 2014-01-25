@@ -86,7 +86,7 @@ plugin based on Twitter Bootstrap 3
     'test': [],
     'demo': [],
     # use same option has OpenERP web module
-    'auto_install': True,
+    'auto_install': False,
     'bootstrap': True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
