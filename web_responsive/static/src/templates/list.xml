@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+<t t-name="ResponsiveList">
+    <div class="responsive-list" />
+</t>
+
+<t t-name="ResponsiveItem">
+    <h4><t t-esc="name" /></h4>
+</t>
+
+</templates>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+
+<t t-name="ResponsiveMenu">
+    <div class="navigation">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#openerp-menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="openerp-menu">
+                <ul class="nav navbar-nav" t-if="widget.data">
+                    <li t-foreach="widget.data.data.children" t-as="menu">
+                        <t t-call="ResponsiveMenu.link" />
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="switch-mobile">
+                            <span>Desktop Version</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="logout">
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</t>
+
+<t t-name="ResponsiveMenu.link">
+    <t t-if="menu.children.length == 0">
+        <a t-attf-href="#menu_id=#{menu.id}&amp;action=#{menu.action ? menu.action.split(',')[1] : ''}"
+            t-att-data-menu="menu.id"
+            t-att-data-action-model="menu.action ? menu.action.split(',')[0] : ''"
+            t-att-data-action-id="menu.action ? menu.action.split(',')[1] : ''">
+            <span class="oe_menu_text">
+                <t t-esc="menu.name"/>
+            </span>
+        </a>
+    </t>
+    <t t-if="menu.children.length != 0">
+        <a  class="dropdown-toggle"
+            data-toggle="dropdown">
+            <span class="oe_menu_text">
+                <t t-esc="menu.name"/>
+            </span>
+        </a>
+        <ul class="dropdown-menu">
+            <t t-foreach="menu.children" t-as="menu">
+                <t t-if="menu.children.length != 0">
+                    <li class="divider"></li>
+                    <t t-foreach="menu.children" t-as="menu">
+                    <li>
+                        <a t-attf-href="#menu_id=#{menu.id}&amp;action=#{menu.action ? menu.action.split(',')[1] : ''}"
+                            t-att-data-menu="menu.id"
+                            t-att-data-action-model="menu.action ? menu.action.split(',')[0] : ''"
+                            t-att-data-action-id="menu.action ? menu.action.split(',')[1] : ''">
+                            <span class="oe_menu_text">
+                                <t t-esc="menu.name"/>
+                            </span>
+                        </a>
+                    </li>
+                    </t>
+                </t>
+                <t t-if="menu.children.length == 0">
+                    <a t-attf-href="#menu_id=#{menu.id}&amp;action=#{menu.action ? menu.action.split(',')[1] : ''}"
+                        t-att-data-menu="menu.id"
+                        t-att-data-action-model="menu.action ? menu.action.split(',')[0] : ''"
+                        t-att-data-action-id="menu.action ? menu.action.split(',')[1] : ''">
+                        <span class="oe_menu_text">
+                            <t t-esc="menu.name"/>
+                        </span>
+                    </a>
+                </t>
+            </t>
+        </ul>
+    </t>
+</t>
+
+<t t-name="UserMenuWithMobile">
+    <span class="oe_user_menu oe_topbar_item oe_dropdown_toggle oe_dropdown_arrow">
+        <img class="oe_topbar_avatar" t-att-data-default-src="_s + '/web/static/src/img/user_menu_avatar.png'"/>
+        <span class="oe_topbar_name"/>
+        <ul class="oe_dropdown_menu">
+            <li><a href="#" data-menu="settings">Preferences</a></li>
+            <li><a href="#" data-menu="about">About OpenERP</a></li>
+            <li><a href="#" data-menu="mobile">Force Mobile Layout</a></li>
+            <li><a href="#" data-menu="help">Help</a></li>
+            <li><a href="#" data-menu="logout">Log out</a></li>
+        </ul>
+    </span>
+</t>
+
+
+</templates>

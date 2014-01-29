@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+<t t-name="ResponsiveForm">
+    <form role="form" class="responsive-form" action="#" />
+</t>
+
+<t t-name="ResponsiveForm.Widget.Input">
+    <div class="row">
+        <div class="col-md-6">
+            <label t-att-for="name + '_' + id"><t t-esc="field_description" /></label>
+        </div>
+        <div class="col-md-6">
+            <t t-if="mode == 'edit'">
+                <input class="form-control"
+                       t-att-name="name"
+                       t-att-type="input_type"
+                       t-att-required="modifiers.required"
+                       t-att-id="name + '_' + id"
+                       t-att-placeholder="field_description"
+                       t-att-value="value" />
+            </t>
+            <t t-if="mode == 'view'">
+                <span class="value"><t t-esc="text" /></span>
+            </t>
+        </div>
+    </div>
+</t>
+
+<t t-name="ResponsiveForm.Widget.Textarea">
+    <div class="row">
+        <t t-if="!nolabel">
+        <div class="col-md-6">
+            <label t-att-for="name + '_' + id"><t t-esc="field_description" /></label>
+        </div>
+        </t>
+        <div t-att-class="nolabel ? 'col-md-12' : 'col-md-6'">
+            <t t-if="mode == 'edit'">
+                <textarea class="form-control"
+                          t-att-name="name"
+                          t-att-required="modifiers.required"
+                          t-att-id="name + '_' + id"
+                          t-att-placeholder="field_description"
+                          t-att-rows="rows || 3"><t t-esc="text" /></textarea>
+            </t>
+            <t t-if="mode == 'view'">
+                <span class="value wrapped"><t t-esc="text" /></span>
+            </t>
+        </div>
+    </div>
+</t>
+
+<t t-name="ResponsiveForm.Widget.Separator">
+    <t t-esc="string" />
+</t>
+
+<t t-name="ResponsiveForm.Widget.Info">
+    <ul class="info-panel-list"></ul>
+</t>
+
+<t t-name="ResponsiveForm.Widget.Info.Item">
+    <span class="label"><t t-esc="name" />:</span>
+    <span class="value">
+        <t t-if="value">
+            <t t-esc="value" />
+        </t>
+        <t t-if="!value">-</t>
+    </span>
+</t>
+
+</templates>

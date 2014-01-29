@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+<t t-name="ResponsiveViewManager">
+    <div class="view_manager">
+
+        <div class="view_manager_head">
+            <div class="head_item oe_view_manager_view_search" t-opentag="true"/>
+            <div class="head_item oe_view_manager_buttons" />
+            <div class="head_item oe_view_manager_pager oe_right"/>
+        </div>
+
+        <div class="oe_view_manager_body">
+            <t t-foreach="widget.views_src" t-as="view">
+                <div t-attf-class="oe_view_manager_view_#{view.view_type}"/>
+            </t>
+        </div>
+
+    </div>
+</t>
+
+</templates>

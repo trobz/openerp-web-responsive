@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+<t t-name="Responsive.Button">
+    <t t-if="icon.length > 0">
+        <i t-att-class="icon"></i>
+    </t>
+    <t t-esc="label" />
+</t>
+
+</templates>
